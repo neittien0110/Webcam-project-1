@@ -1,5 +1,8 @@
 ﻿using System;
-
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Collections.Generic;
 namespace Camera_win_10
 {
     internal class WebCam

@@ -92,6 +92,7 @@
             this.Start.TabIndex = 1;
             this.Start.Text = "Start";
             this.Start.UseVisualStyleBackColor = true;
+            this.Start.Click += new System.EventHandler(this.Start_Click);
             // 
             // Stop
             // 
@@ -119,6 +120,7 @@
             this.Save.TabIndex = 4;
             this.Save.Text = "Save";
             this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // Capture
             // 
@@ -128,6 +130,7 @@
             this.Capture.TabIndex = 5;
             this.Capture.Text = "Capture";
             this.Capture.UseVisualStyleBackColor = true;
+            this.Capture.Click += new System.EventHandler(this.Capture_Click);
             // 
             // CameraWin10
             // 
@@ -144,6 +147,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CameraWin10";
             this.Text = "Camera";
+            this.Load += new System.EventHandler(this.CameraWin10_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
