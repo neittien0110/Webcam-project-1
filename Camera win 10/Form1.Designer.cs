@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CameraWin10));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.Start = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Start = new System.Windows.Forms.Button();
+            this.Stop = new System.Windows.Forms.Button();
+            this.Continue = new System.Windows.Forms.Button();
+            this.Save = new System.Windows.Forms.Button();
+            this.Capture = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -53,40 +56,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(631, 291);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Location = new System.Drawing.Point(510, 297);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.Start.Location = new System.Drawing.Point(0, 315);
-            this.Start.Name = "button1";
-            this.Start.Size = new System.Drawing.Size(75, 23);
-            this.Start.TabIndex = 1;
-            this.Start.Text = "button1";
-            this.Start.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(0, 344);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(0, 373);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -108,18 +77,73 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Location = new System.Drawing.Point(510, 375);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // Start
+            // 
+            this.Start.Location = new System.Drawing.Point(0, 300);
+            this.Start.Name = "Start";
+            this.Start.Size = new System.Drawing.Size(75, 23);
+            this.Start.TabIndex = 1;
+            this.Start.Text = "Start";
+            this.Start.UseVisualStyleBackColor = true;
+            // 
+            // Stop
+            // 
+            this.Stop.Location = new System.Drawing.Point(109, 300);
+            this.Stop.Name = "Stop";
+            this.Stop.Size = new System.Drawing.Size(75, 23);
+            this.Stop.TabIndex = 2;
+            this.Stop.Text = "Stop";
+            this.Stop.UseVisualStyleBackColor = true;
+            // 
+            // Continue
+            // 
+            this.Continue.Location = new System.Drawing.Point(220, 300);
+            this.Continue.Name = "Continue";
+            this.Continue.Size = new System.Drawing.Size(75, 23);
+            this.Continue.TabIndex = 3;
+            this.Continue.Text = "Continue";
+            this.Continue.UseVisualStyleBackColor = true;
+            // 
+            // Save
+            // 
+            this.Save.Location = new System.Drawing.Point(510, 300);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(75, 23);
+            this.Save.TabIndex = 4;
+            this.Save.Text = "Save";
+            this.Save.UseVisualStyleBackColor = true;
+            // 
+            // Capture
+            // 
+            this.Capture.Location = new System.Drawing.Point(364, 300);
+            this.Capture.Name = "Capture";
+            this.Capture.Size = new System.Drawing.Size(75, 23);
+            this.Capture.TabIndex = 5;
+            this.Capture.Text = "Capture";
+            this.Capture.UseVisualStyleBackColor = true;
+            // 
             // CameraWin10
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 408);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Capture);
+            this.Controls.Add(this.Save);
+            this.Controls.Add(this.Continue);
+            this.Controls.Add(this.Stop);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CameraWin10";
-            this.Text = "Form1";
+            this.Text = "Camera";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -134,8 +158,10 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button Start;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Stop;
+        private System.Windows.Forms.Button Continue;
+        private System.Windows.Forms.Button Save;
+        private System.Windows.Forms.Button Capture;
     }
 }
 
