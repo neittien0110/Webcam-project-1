@@ -23,6 +23,7 @@ namespace Camera_win_10
         }
         private FilterInfoCollection videoDevice;
         private VideoCaptureDevice FinalFrame;
+        WebCam webcam;
         private void CameraWin10_Load(object sender, EventArgs e)
         {
             videoDevice = new FilterInfoCollection(FilterCategory.VideoInputDevice);// kết nối webcam trên máy tính
@@ -82,5 +83,7 @@ namespace Camera_win_10
                 }
             }
         }
+
+        
     }
 }

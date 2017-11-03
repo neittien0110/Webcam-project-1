@@ -34,8 +34,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Start = new System.Windows.Forms.Button();
-            this.Stop = new System.Windows.Forms.Button();
-            this.Continue = new System.Windows.Forms.Button();
             this.Save = new System.Windows.Forms.Button();
             this.Capture = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -51,9 +49,11 @@
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 3);
+            this.tableLayoutPanel1.MaximumSize = new System.Drawing.Size(1366, 768);
+            this.tableLayoutPanel1.MinimumSize = new System.Drawing.Size(631, 291);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(631, 291);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -86,7 +86,7 @@
             // 
             // Start
             // 
-            this.Start.Location = new System.Drawing.Point(0, 300);
+            this.Start.Location = new System.Drawing.Point(3, 300);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(75, 23);
             this.Start.TabIndex = 1;
@@ -94,27 +94,9 @@
             this.Start.UseVisualStyleBackColor = true;
             this.Start.Click += new System.EventHandler(this.Start_Click);
             // 
-            // Stop
-            // 
-            this.Stop.Location = new System.Drawing.Point(109, 300);
-            this.Stop.Name = "Stop";
-            this.Stop.Size = new System.Drawing.Size(75, 23);
-            this.Stop.TabIndex = 2;
-            this.Stop.Text = "Stop";
-            this.Stop.UseVisualStyleBackColor = true;
-            // 
-            // Continue
-            // 
-            this.Continue.Location = new System.Drawing.Point(220, 300);
-            this.Continue.Name = "Continue";
-            this.Continue.Size = new System.Drawing.Size(75, 23);
-            this.Continue.TabIndex = 3;
-            this.Continue.Text = "Continue";
-            this.Continue.UseVisualStyleBackColor = true;
-            // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(510, 300);
+            this.Save.Location = new System.Drawing.Point(556, 300);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(75, 23);
             this.Save.TabIndex = 4;
@@ -124,7 +106,7 @@
             // 
             // Capture
             // 
-            this.Capture.Location = new System.Drawing.Point(364, 300);
+            this.Capture.Location = new System.Drawing.Point(279, 300);
             this.Capture.Name = "Capture";
             this.Capture.Size = new System.Drawing.Size(75, 23);
             this.Capture.TabIndex = 5;
@@ -139,8 +121,6 @@
             this.ClientSize = new System.Drawing.Size(633, 408);
             this.Controls.Add(this.Capture);
             this.Controls.Add(this.Save);
-            this.Controls.Add(this.Continue);
-            this.Controls.Add(this.Stop);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -162,8 +142,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button Start;
-        private System.Windows.Forms.Button Stop;
-        private System.Windows.Forms.Button Continue;
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button Capture;
     }
