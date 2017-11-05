@@ -78,7 +78,6 @@ namespace Camera_win_10
             {
                 if ((myStream = saveFileDialog1.OpenFile()) != null)
                 {
-                    // Code to write the stream goes here.
                     myStream.Close();
                 }
             }
