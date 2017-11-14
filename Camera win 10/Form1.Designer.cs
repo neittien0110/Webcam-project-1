@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CameraWin10));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -36,6 +37,8 @@
             this.Save = new System.Windows.Forms.Button();
             this.Capture = new System.Windows.Forms.Button();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.AutoCap = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -46,7 +49,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -57,7 +61,8 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
@@ -88,7 +93,7 @@
             // Save
             // 
             this.Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Save.Location = new System.Drawing.Point(556, 329);
+            this.Save.Location = new System.Drawing.Point(382, 329);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(75, 23);
             this.Save.TabIndex = 4;
@@ -99,7 +104,7 @@
             // Capture
             // 
             this.Capture.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Capture.Location = new System.Drawing.Point(276, 329);
+            this.Capture.Location = new System.Drawing.Point(181, 329);
             this.Capture.Name = "Capture";
             this.Capture.Size = new System.Drawing.Size(75, 23);
             this.Capture.TabIndex = 5;
@@ -126,11 +131,27 @@
             this.splitContainer2.SplitterDistance = 311;
             this.splitContainer2.TabIndex = 6;
             // 
+            // AutoCap
+            // 
+            this.AutoCap.Location = new System.Drawing.Point(549, 329);
+            this.AutoCap.Name = "AutoCap";
+            this.AutoCap.Size = new System.Drawing.Size(82, 23);
+            this.AutoCap.TabIndex = 7;
+            this.AutoCap.Text = "Auto Capture";
+            this.AutoCap.UseVisualStyleBackColor = true;
+            this.AutoCap.Click += new System.EventHandler(this.AutoCap_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // CameraWin10
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 408);
+            this.Controls.Add(this.AutoCap);
             this.Controls.Add(this.splitContainer2);
             this.Controls.Add(this.Capture);
             this.Controls.Add(this.Save);
@@ -158,6 +179,8 @@
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button Capture;
         private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.Button AutoCap;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

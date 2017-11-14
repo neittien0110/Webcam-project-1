@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//Khai báo sử dụng các thư viện của AForge
 using AForge;
 using AForge.Video;
 using AForge.Video.DirectShow;
@@ -21,13 +22,15 @@ namespace Camera_win_10
         {
             InitializeComponent();
         }
-        private FilterInfoCollection videoDevice;
+        //Khai báo biến toàn cục
+        private FilterInfoCollection CaptureDevice;
         private VideoCaptureDevice FinalFrame;
+        Bitmap video, video2;
         WebCam webcam;
         private void CameraWin10_Load(object sender, EventArgs e)
         {
-            videoDevice = new FilterInfoCollection(FilterCategory.VideoInputDevice);// kết nối webcam trên máy tính
-            foreach (FilterInfo Device in videoDevice)
+            CaptureDevice = new FilterInfoCollection(FilterCategory.VideoInputDevice);// kết nối webcam trên máy tính
+            foreach (FilterInfo Device in CaptureDevice)
             {
                 comboBox1.Items.Add(Device.Name);
             }
@@ -37,13 +40,15 @@ namespace Camera_win_10
 
         private void Start_Click(object sender, EventArgs e)// bắt đầu hiển thị hình ảnh từ webcam
         {
-            FinalFrame = new VideoCaptureDevice(videoDevice[comboBox1.SelectedIndex].MonikerString);
+            FinalFrame = new VideoCaptureDevice(CaptureDevice[comboBox1.SelectedIndex].MonikerString);
             FinalFrame.NewFrame += FinalFrame_NewFrame;
             FinalFrame.Start();
         }
         private void FinalFrame_NewFrame(object sender, NewFrameEventArgs eventArgs)//Hiển thị hình ảnh vào pictureBox1
         {
             pictureBox1.Image = (Bitmap)eventArgs.Frame.Clone();
+            video = (Bitmap)eventArgs.Frame.Clone();
+            video2 = (Bitmap)eventArgs.Frame.Clone();
         }
         private void CameraWin10_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -83,6 +88,15 @@ namespace Camera_win_10
             }
         }
 
-        
+        private void AutoCap_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            pictureBox1.Image = video;
+            
+        }
     }
 }
