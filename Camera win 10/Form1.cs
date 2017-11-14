@@ -25,7 +25,6 @@ namespace Camera_win_10
         //Khai báo biến toàn cục
         private FilterInfoCollection CaptureDevice;
         private VideoCaptureDevice FinalFrame;
-        Bitmap video, video2;
         WebCam webcam;
         private void CameraWin10_Load(object sender, EventArgs e)
         {
@@ -47,8 +46,6 @@ namespace Camera_win_10
         private void FinalFrame_NewFrame(object sender, NewFrameEventArgs eventArgs)//Hiển thị hình ảnh vào pictureBox1
         {
             pictureBox1.Image = (Bitmap)eventArgs.Frame.Clone();
-            video = (Bitmap)eventArgs.Frame.Clone();
-            video2 = (Bitmap)eventArgs.Frame.Clone();
         }
         private void CameraWin10_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -95,8 +92,8 @@ namespace Camera_win_10
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            pictureBox1.Image = video;
-            
+            pictureBox2.Image = (Bitmap)pictureBox1.Image.Clone();
+            pictureBox2.Image.Save(@"D:\anh" + ".jpg", ImageFormat.Jpeg);
         }
     }
 }
