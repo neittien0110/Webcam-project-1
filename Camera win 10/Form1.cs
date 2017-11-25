@@ -91,9 +91,11 @@ namespace Camera_win_10
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        {
+        {   String filename;
             pictureBox2.Image = (Bitmap)pictureBox1.Image.Clone();
-            pictureBox2.Image.Save(@"D:\anh" + ".jpg", ImageFormat.Jpeg);
+            //filename = @"D:\anh" + ".jpg";
+            filename = DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".jpg";
+            pictureBox2.Image.Save(filename, ImageFormat.Jpeg);
         }
     }
 }
